@@ -58,7 +58,7 @@ function keydownHandler(event) {
 function searchFunction(){
     let search = window.getSelection().toString();
     if (search !== "") {
-      search = search.replace(" ", "+"); // Fix: Replace spaces with '+'
+      search = search.replace(" ", "+"); // Fix: Replace spaces with '+' for the google search url
       window.open(searchEngine + search, "_blank");
     }
 }
