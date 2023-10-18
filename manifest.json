@@ -16,7 +16,7 @@
       "matches": ["<all_urls>"],
       "js": ["SearchSelectedText.js"]
   }],
-  "background": {
+  "background.service_worker": {
     "scripts": ["SearchSelectedText.js"]
 },
   "action": {

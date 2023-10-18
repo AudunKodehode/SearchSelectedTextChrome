@@ -75,3 +75,31 @@ img {
 .flex {
   padding-left: 20px;
 }
+.toggle{
+  width: 50px;
+  height: 25px;
+  background: green;
+  border: 2px solid black;
+  border-radius: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.2s;
+  margin-left: 20px;
+}
+.on{
+  background: green;
+  justify-content: flex-end;
+}
+.off{
+  background: rgb(128, 0, 0);
+  justify-content: flex-start;
+}
+.toggleDot{
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: black;
+  margin-left: 3px;
+  margin-right: 3px;
+}
