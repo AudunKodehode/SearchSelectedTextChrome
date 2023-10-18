@@ -60,14 +60,13 @@ function searchFunction(){
     if (search !== "") {
       search = search.replace(" ", "+"); // Fix: Replace spaces with '+' for the google search url
       window.open(searchEngine + search, "_blank");
+      console.log("test")
     }
 }
 function modifierCheck() {
   if (modifierInput.value === "ctrl") {
     return event.ctrlKey;
-  } else if (modifierInput.value === "shift") {
-    return event.shiftKey;
-  } else if (modifierInput.value === "alt") {
+  }else if (modifierInput.value === "alt") {
     return event.altKey;
   }
 }
