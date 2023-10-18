@@ -2,7 +2,7 @@ const searchEngine = "https://www.google.com/search?q=";
 // import {keyBind, alternativeKey} from "./settings.js";
 let keyBind = "Q";
 const alternativeKey = keyBind.toLowerCase();
-const toggleButton = document.getElementById("toggleButton");
+const toggleButton = document.getElementById("toggleDiv");
 const saveSettingsButton = document.getElementById("saveSettingsButton");
 
 let toggleValue = true;
