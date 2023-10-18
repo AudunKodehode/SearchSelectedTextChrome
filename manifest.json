@@ -17,9 +17,6 @@
       "matches": ["<all_urls>"],
       "js": ["SearchSelectedText.js"]
   }],
-  "background.service_worker": {
-    "scripts": ["SearchSelectedText.js"]
-},
   "action": {
       "default_popup": "settings.html",
       "default_icon": {
