@@ -6,8 +6,6 @@ const saveSettingsButton = document.getElementById("saveSettingsButton");
 const keyInput = document.getElementById("keyInput");
 let toggleValue = true;
 
-
-
 function setToggle() {
   if (toggleValue) {
     document.getElementById("toggleDiv").className = "toggle on";
@@ -38,8 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     keyBind = document.cookie[1];
     keyInput.value = document.cookie[1];
+    alternativeKey = document.cookie[2];
     console.log(document.cookie)
+    } else{
+        setEventListener("q", "Q");
+        console.log("set standard Q")
     }
+    console.log(`Selected keybind: ${keyBind}`);
+
 });
 function saveSettings() {
   let textvalue = keyInput.value[0];
@@ -48,20 +52,25 @@ function saveSettings() {
   keyBind = textvalue;
   alternativeKey = keyBind.toLowerCase();
   document.cookie[1] = keyBind;
+  document.cookie[2] = alternativeKey;
 
-document.addEventListener("keydown", function (event) {
-  if (toggleValue == true) {
-    if (
-      (event.key === keyBind || event.key === alternativeKey) &&
-      event.ctrlKey
-    ) {
-      let search = window.getSelection().toString();
-      if (search != "") {
-        search.replace(" ", "+");
-        window.open(searchEngine + search, "_blank");
-      }
-    }
-  }
-});
+setEventListener(keyBind, alternativeKey);
 
+}
+
+function setEventListener(keyBind, alternativeKeyBind){
+    document.addEventListener("keydown", function (event) {
+        if (toggleValue == true) {
+          if (
+            (event.key === keyBind || event.key === alternativeKeyBind) &&
+            event.ctrlKey
+          ) {
+            let search = window.getSelection().toString();
+            if (search != "") {
+              search.replace(" ", "+");
+              window.open(searchEngine + search, "_blank");
+            }
+          }
+        }
+      });
 }
