@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  color: white;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.5);
+  width: fit-content;
+}
+option:active {
+  background: rgba(82, 82, 82, 0.671);
+  color: black;
+}
+#keyInput {
+  width: 22px;
+  height:24px;
+  background: rgba(82, 82, 82, 0.671);
+  color: white;
+  text-align: center;
+}
+.select {
+  width: 55px;
+  background: rgba(82, 82, 82, 0.671);
+  color: white;
+}
+#saveButton {
+  width: 90px;
+  background: rgba(82, 82, 82, 0.671);
+  margin-left: 24px;
+  margin-top: 5px;
+  color: white;
+  border-radius: 3px;
+}
+#saveButton:hover {
+  background: rgba(25, 25, 25, 0.671);
+}
+#saveButton:active {
+  background: rgba(120, 120, 120, 0.671);
+}
+
+#top {
+  background: rgba(0, 0, 0, 0.671);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h4 {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  padding-bottom: 5px;
+}
+img {
+  width: 100px;
+  padding-left: 20px;
+}
+.divide {
+  display: flex;
+}
+.version {
+  text-align: center;
+  color: white;
+}
+.flex {
+  padding-left: 20px;
+}

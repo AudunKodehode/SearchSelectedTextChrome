@@ -1,0 +1,30 @@
+{
+  "name": "Google Selected Text",
+  "short_name": "GST",
+  "description": "Creates a keyboard shortcut to Google selected text in a new tab.",
+  "author": "AudunKodehode",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": [
+      "activeTab"
+  ],
+  "icons": {
+  "48": "\icons\icon-48.png",
+  "96": "\icons\icon-96.png"
+},
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["GoogleSelectedText.js"]
+  }],
+  "background": {
+    "scripts": ["GoogleSelectedText.js"]
+},
+  "action": {
+      "default_popup": "settings.html",
+      "default_icon": {
+          "16": "icons/icon-16.png",
+          "48": "icons/icon-48.png",
+          "128": "icons/icon-128.png"
+      }
+  }
+}
