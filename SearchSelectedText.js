@@ -51,15 +51,17 @@ function setEventListener(keyBind, alternativeKeyBind) {
 function keydownHandler(event) {
   if (toggleValue) {
     if ((event.key === keyBind || event.key === alternativeKey) && modifierCheck()) {
-      let search = window.getSelection().toString();
-      if (search !== "") {
-        search = search.replace(" ", "+"); // Fix: Replace spaces with '+'
-        window.open(searchEngine + search, "_blank");
-      }
+        searchFunction();
     }
   }
 }
-
+function searchFunction(){
+    let search = window.getSelection().toString();
+    if (search !== "") {
+      search = search.replace(" ", "+"); // Fix: Replace spaces with '+'
+      window.open(searchEngine + search, "_blank");
+    }
+}
 function modifierCheck() {
   if (modifierInput.value === "ctrl") {
     return event.ctrlKey;
