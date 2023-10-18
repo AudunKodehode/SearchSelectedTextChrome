@@ -3,7 +3,7 @@
   <head>
     <title>Google Selected Text</title>
     <link rel="stylesheet" href="settings.css" />
-    <script src="settings.js"></script>
+    <script src="SearchSelectedText.js"></script>
   </head>
   <body>
     <div id="top">
@@ -14,7 +14,7 @@
         </div>
         <div class="right">
           <div id="toggleDiv" class="toggle on">
-            <button onclick="toggleFunction()" class="toggleDot"></button>
+            <button id="toggleButton" class="toggleDot"></button>
           </div>
           <div class="flex">
             <select class="select">
@@ -25,14 +25,14 @@
             <label for="keyInput"> + </label>
             <input id="keyInput" type="text" placeholder="Q" value="Q" />
           </div>
-		  <button id="saveButton" onclick="saveSettings()">Save</button>
+          <button id="saveButton" onclick="saveSettings()">Save</button>
         </div>
       </div>
       <p class="version">
-        Extension made by <a href="https://github.com/AudunKodeHode">AudunKodeHode</a>
+        Extension made by
+        <a href="https://github.com/AudunKodeHode">AudunKodeHode</a>
       </p>
-      <p class="version">v 1.0.0   |    <a>GitHub Repo</a></p> 
+      <p class="version">v 1.0.0 | <a>GitHub Repo</a></p>
     </div>
   </body>
-
 </html>

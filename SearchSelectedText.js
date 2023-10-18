@@ -2,6 +2,8 @@ const searchEngine = "https://www.google.com/search?q=";
 // import {keyBind, alternativeKey} from "./settings.js";
 let keyBind = "Q";
 const alternativeKey = keyBind.toLowerCase();
+const toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener('click', toggleFunction);
 let toggleValue = true;
 document.addEventListener("keydown", function (event) {
     if (toggleValue == true){
@@ -19,8 +21,8 @@ document.addEventListener("keydown", function (event) {
 });
 
 function toggleFunction() {
-  toggle = !toggle;
-  if (toggle) {
+    toggleValue = !toggleValue;
+  if (toggleValue) {
     document.getElementById("toggleDiv").className = "toggle on";
   } else {
     document.getElementById("toggleDiv").className = "toggle off";
