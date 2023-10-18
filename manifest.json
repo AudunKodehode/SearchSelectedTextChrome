@@ -15,7 +15,7 @@
 },
   "content_scripts": [{
       "matches": ["<all_urls>"],
-      "scripts": ["SearchSelectedText.js"]
+      "js": ["SearchSelectedText.js"]
   }],
   "background.service_worker": {
     "scripts": ["SearchSelectedText.js"]
