@@ -3,40 +3,48 @@ const searchEngine = "https://www.google.com/search?q=";
 let keyBind = "Q";
 const alternativeKey = keyBind.toLowerCase();
 const toggleButton = document.getElementById("toggleButton");
+const saveSettingsButton = document.getElementById("saveSettingsButton");
 
 let toggleValue = true;
 document.addEventListener("keydown", function (event) {
-    if (toggleValue == true){
-  if (
-    (event.key === keyBind || event.key === alternativeKey) &&
-    event.ctrlKey
-  ) {
-    let search = window.getSelection().toString();
-    if (search != "") {
-      search.replace(" ", "+");
-      window.open(searchEngine + search, "_blank");
+  if (toggleValue == true) {
+    if (
+      (event.key === keyBind || event.key === alternativeKey) &&
+      event.ctrlKey
+    ) {
+      let search = window.getSelection().toString();
+      if (search != "") {
+        search.replace(" ", "+");
+        window.open(searchEngine + search, "_blank");
+      }
     }
   }
-}
 });
-function setToggle(){
-    if (toggleValue) {
-        document.getElementById("toggleDiv").className = "toggle on";
-      } else {
-        document.getElementById("toggleDiv").className = "toggle off";
-      }
-}
-
-function toggleFunction() {
-    toggleValue = !toggleValue;
+function setToggle() {
   if (toggleValue) {
     document.getElementById("toggleDiv").className = "toggle on";
   } else {
     document.getElementById("toggleDiv").className = "toggle off";
   }
 }
-document.addEventListener('DOMContentLoaded', function () {
-    setToggle();
-    toggleButton.addEventListener('click', toggleFunction);
-});
 
+function toggleFunction() {
+  toggleValue = !toggleValue;
+  if (toggleValue) {
+    document.getElementById("toggleDiv").className = "toggle on";
+  } else {
+    document.getElementById("toggleDiv").className = "toggle off";
+  }
+}
+document.addEventListener("DOMContentLoaded", function () {
+  setToggle();
+  toggleButton.addEventListener("click", toggleFunction);
+  saveSettingsButton.addEventListener("click", saveSettings);
+});
+function saveSettings() {
+  let textvalue = keyInput.value[0];
+  textvalue = textvalue.toUpperCase();
+  keyInput.value = textvalue;
+  keyBind = textvalue;
+  alternativeKey = keyBind.toLowerCase();
+}
