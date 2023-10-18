@@ -5,6 +5,7 @@ const toggleButton = document.getElementById("toggleDiv");
 const saveSettingsButton = document.getElementById("saveSettingsButton");
 const keyInput = document.getElementById("keyInput");
 let toggleValue = true;
+
 if (document.cookie.length > 2){
 if (document.cookie[0] == "0"){
     toggleValue = false;
