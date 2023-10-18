@@ -1,11 +1,20 @@
 const searchEngine = "https://www.google.com/search?q=";
-// import {keyBind, alternativeKey} from "./settings.js";
 let keyBind = "Q";
 const alternativeKey = keyBind.toLowerCase();
 const toggleButton = document.getElementById("toggleDiv");
 const saveSettingsButton = document.getElementById("saveSettingsButton");
-
+const keyInput = document.getElementById("keyInput");
 let toggleValue = true;
+if (document.cookie.length > 2){
+if (document.cookie[0] == "0"){
+    toggleValue = false;
+} else {
+    toggleValue = true;
+}
+keyBind = document.cookie[1];
+keyInput.value = document.cookie[1];
+}
+
 document.addEventListener("keydown", function (event) {
   if (toggleValue == true) {
     if (
@@ -32,8 +41,10 @@ function toggleFunction() {
   toggleValue = !toggleValue;
   if (toggleValue) {
     document.getElementById("toggleDiv").className = "toggle on";
+    document.cookie[0] = "1"
   } else {
     document.getElementById("toggleDiv").className = "toggle off";
+    document.cookie[0] = "0"
   }
 }
 document.addEventListener("DOMContentLoaded", function () {
@@ -47,4 +58,5 @@ function saveSettings() {
   keyInput.value = textvalue;
   keyBind = textvalue;
   alternativeKey = keyBind.toLowerCase();
+  document.cookie[1] = keyBind;
 }
