@@ -8,20 +8,6 @@ let toggleValue = true;
 
 
 
-document.addEventListener("keydown", function (event) {
-  if (toggleValue == true) {
-    if (
-      (event.key === keyBind || event.key === alternativeKey) &&
-      event.ctrlKey
-    ) {
-      let search = window.getSelection().toString();
-      if (search != "") {
-        search.replace(" ", "+");
-        window.open(searchEngine + search, "_blank");
-      }
-    }
-  }
-});
 function setToggle() {
   if (toggleValue) {
     document.getElementById("toggleDiv").className = "toggle on";
@@ -62,4 +48,20 @@ function saveSettings() {
   keyBind = textvalue;
   alternativeKey = keyBind.toLowerCase();
   document.cookie[1] = keyBind;
+
+document.addEventListener("keydown", function (event) {
+  if (toggleValue == true) {
+    if (
+      (event.key === keyBind || event.key === alternativeKey) &&
+      event.ctrlKey
+    ) {
+      let search = window.getSelection().toString();
+      if (search != "") {
+        search.replace(" ", "+");
+        window.open(searchEngine + search, "_blank");
+      }
+    }
+  }
+});
+
 }
